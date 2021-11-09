@@ -13,4 +13,4 @@
         vdom:  "{{ vdom }}"
         access_token: "{{ fortios_access_token }}"
         system_global:
-            hostname: 'Ansible-FGT'
+            hostname: "{{ hostname }}"
