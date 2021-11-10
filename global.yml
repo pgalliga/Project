@@ -1,4 +1,4 @@
-- hosts: "{{ hostname }}"
+- hosts: HQ
   connection: httpapi
   collections:
   - fortinet.fortios
@@ -15,15 +15,4 @@
         system_global:
             hostname: "{{ hostname }}"
             timezone: "{{ timezone }}"
-   - name: Configure Interfaces
-     fortios_system_interface:
-        vdom:  "{{ vdom }}"
-        state: "present"
-        enable_log: "yes"
-        system_interface:
-            interface: "port2" 
-            name: "port2"
-            vdom: "root"
-            ip: "172.16.1.1/24"
-            mode: "static"
-            type: "physical"
+ 
