@@ -1,0 +1,7 @@
+---
+- hosts: HQ
+  gather_facts: false
+
+- import_playbook: global.yml
+
+- import_playbook: interface.yml

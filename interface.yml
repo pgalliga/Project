@@ -2,11 +2,7 @@
   connection: httpapi
   collections:
   - fortinet.fortios
-  vars:
-   vdom: "root"
-   ansible_httpapi_use_ssl: yes
-   ansible_httpapi_validate_certs: no
-   ansible_httpapi_port: 443
+
   tasks:
    - name: Configure Mgmt Alias
      fortios_system_interface:
