@@ -1,30 +1,25 @@
-- hosts: HQ
-  connection: httpapi
-  collections:
-  - fortinet.fortios
-  vars:
-   vdom: "root"
-   ansible_httpapi_use_ssl: yes
-   ansible_httpapi_validate_certs: no
-   ansible_httpapi_port: 443
-  tasks:
-   - name: Configure Mgmt Alias
-     fortios_system_interface:
-        vdom:  "{{ vdom }}"
-        access_token: "{{ fortios_access_token }}"
-        state: "present"
-        enable_log: "yes"
-        system_interface:
+  - hosts: HQ
+    connection: httpapi
+    collections:
+    - fortinet.fortios
+    tasks:
+      - name: Configure Mgmt Alias
+        fortios_system_interface:
+          vdom:  "{{ vdom }}"
+          access_token: "{{ fortios_access_token }}"
+          state: "present"
+          enable_log: "yes"
+          system_interface:
             interface: "port1"
             alias: "Mgmt"
             name: "port1"
-   - name: Configure Port2
-     fortios_system_interface:
-        vdom:  "{{ vdom }}"
-        access_token: "{{ fortios_access_token }}"
-        state: "present"
-        enable_log: "yes"
-        system_interface:
+      - name: Configure Port2
+        fortios_system_interface:
+          vdom:  "{{ vdom }}"
+          access_token: "{{ fortios_access_token }}"
+          state: "present"
+          enable_log: "yes"
+          system_interface:
             interface: "port2"
             alias: "{{ port2_alias }}"
             name: "port2"
@@ -33,13 +28,13 @@
             mode: "static"
             type: "physical"
             allowaccess: "ssh,https,ping"
-   - name: Configure Port3
-     fortios_system_interface:
-        vdom:  "{{ vdom }}"
-        access_token: "{{ fortios_access_token }}"
-        state: "present"
-        enable_log: "yes"
-        system_interface:
+      - name: Configure Port3
+        fortios_system_interface:
+          vdom:  "{{ vdom }}"
+          access_token: "{{ fortios_access_token }}"
+          state: "present"
+          enable_log: "yes"
+          system_interface:
             interface: "port3" 
             alias: "{{ port3_alias }}"
             name: "port3"
@@ -48,13 +43,13 @@
             mode: "static"
             type: "physical"
             allowaccess: "ssh,https,ping"
-   - name: Configure LAN
-     fortios_system_interface:
-        vdom:  "{{ vdom }}"
-        access_token: "{{ fortios_access_token }}"
-        state: "present"
-        enable_log: "yes"
-        system_interface:
+      - name: Configure LAN
+        fortios_system_interface:
+          vdom:  "{{ vdom }}"
+          access_token: "{{ fortios_access_token }}"
+          state: "present"
+          enable_log: "yes"
+          system_interface:
             interface: "fortilink"
             alias: "{{ lan_alias }}"
             name: "LAN"
@@ -64,13 +59,13 @@
             type: "vlan"
             vlanid: "{{ lan_vlanid }}"
             allowaccess: "ssh,https,ping"
-   - name: Configure DMZ
-     fortios_system_interface:
-        vdom:  "{{ vdom }}"
-        access_token: "{{ fortios_access_token }}"
-        state: "present"
-        enable_log: "yes"
-        system_interface:
+      - name: Configure DMZ
+        fortios_system_interface:
+          vdom:  "{{ vdom }}"
+          access_token: "{{ fortios_access_token }}"
+          state: "present"
+          enable_log: "yes"
+          system_interface:
             interface: "fortilink"
             alias: "{{ dmz_alias }}"
             name: "DMZ"
@@ -80,13 +75,13 @@
             type: "vlan"
             vlanid: "{{ dmz_vlanid }}"
             allowaccess: "ssh,https,ping"
-   - name: Configure Guest
-     fortios_system_interface:
-        vdom:  "{{ vdom }}"
-        access_token: "{{ fortios_access_token }}"
-        state: "present"
-        enable_log: "yes"
-        system_interface:
+      - name: Configure Guest
+        fortios_system_interface:
+          vdom:  "{{ vdom }}"
+          access_token: "{{ fortios_access_token }}"
+          state: "present"
+          enable_log: "yes"
+          system_interface:
             interface: "fortilink"
             alias: "{{ wireless_guest_alias }}"
             name: "GUEST-VLAN"

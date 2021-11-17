@@ -1,0 +1,17 @@
+- hosts: HQ
+  connection: httpapi
+  collections:
+  - fortinet.fortios
+  tasks:
+   - name: Configure Default Route
+     fortios_router_static:
+      state: "present"
+      enable_log: "yes"
+      vdom:  "{{ vdom }}"
+      access_token: "{{ fortios_access_token }}"
+      router_static:
+        seq_num: "1"
+        status: "enable"
+        gateway: "10.99.0.1"
+        dst: "0.0.0.0/0"
+        device: "port1"

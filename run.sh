@@ -1,2 +1,1 @@
-
-ansible-playbook -i xlsx_inventory.py interface.yml
+ansible-playbook -i xlsx_inventory.py hub.yml

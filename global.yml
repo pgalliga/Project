@@ -2,11 +2,6 @@
   connection: httpapi
   collections:
   - fortinet.fortios
-  vars:
-   vdom: "root"
-   ansible_httpapi_use_ssl: yes
-   ansible_httpapi_validate_certs: no
-   ansible_httpapi_port: 443
   tasks:
    - name: Configure global attributes.
      fortios_system_global:
@@ -15,4 +10,15 @@
         system_global:
             hostname: "{{ hostname }}"
             timezone: "{{ timezone }}"
- 
+   - name: Configure NTP
+     fortios_system_ntp:
+        vdom:  "{{ vdom }}"
+        access_token: "{{ fortios_access_token }}"
+        system_ntp:
+            type: "custom"
+            ntpsync: "enable"
+            ntpserver:
+             -
+              id: "1"
+              server: "{{ ntpserver1 }}"
+
