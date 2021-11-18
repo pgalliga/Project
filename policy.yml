@@ -12,6 +12,7 @@
       firewall_policy:
         policyid: "{{ policyid }}"
         name: "{{ name }}"
+        nat: "{{ nat }}"
         srcintf:
         -
           name: "{{ source_int }}"
