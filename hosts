@@ -1,6 +1,0 @@
-[fortigates]
-#fortigate01 ansible_host=10.99.0.123 ansible_user="ansible" ansible_password=4ntsible!
-fortigate01 ansible_host=10.99.0.123 fortios_access_token=xpNccbqz1p3htjNdwNgnwy5qcr4nqb hostname=Ansible-FGT
-
-[fortigates:vars]
-ansible_network_os=fortinet.fortios.fortios

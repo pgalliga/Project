@@ -1,0 +1,32 @@
+- hosts: HQ
+  connection: httpapi
+  collections:
+  - fortinet.fortios
+  tasks:
+   - name: Configure Firewall Policy
+     fortios_firewall_policy:
+      state: "present"
+      enable_log: "yes"
+      vdom:  "{{ vdom }}"
+      access_token: "{{ fortios_access_token }}"
+      firewall_policy:
+        policyid: "{{ policyid }}"
+        name: "{{ name }}"
+        srcintf:
+        -
+          name: "{{ source_int }}"
+        dstintf:
+        -
+          name: "{{ dest_int }}"
+        srcaddr:
+        -
+          name: "{{ source_add }}"
+        dstaddr:
+        -
+          name: "{{ dest_add }}"
+        service:
+        -
+          name: "{{ service }}"
+        action: "{{ action }}"
+        schedule: "{{ schedule }}"
+        logtraffic: "{{ logtraffic }}"

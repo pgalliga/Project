@@ -2,6 +2,7 @@
 - hosts: HQ
   gather_facts: false
 
-- import_playbook: global.yml
-- import_playbook: interface.yml
-- import_playbook: routes.yml
+#- import_playbook: global.yml
+#- import_playbook: interface.yml
+#- import_playbook: routes.yml
+- import_playbook: policy.yml

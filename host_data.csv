@@ -1,2 +1,0 @@
-hostname,mgmt_ip,port2_ip,port2_mask,port3_ip,port3_mask
-HQ,10.99.0.123,172.16.0.1,255.255.255.0,172.17.0.1,255.255.255.0

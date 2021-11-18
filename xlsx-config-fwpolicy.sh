@@ -1,1 +1,0 @@
-./xlsx_inventory.py --config --file host_data.xlsx --hostname-col A --sheet FWPolicy
