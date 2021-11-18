@@ -21,4 +21,6 @@
              -
               id: "1"
               server: "{{ ntpserver1 }}"
-
+             -
+              id: "2"
+              server: "{{ ntpserver2 }}"
