@@ -13,14 +13,17 @@ until [ 1 != 1 ]; do    #Show the menu and ask for selection
             echo 
             read -p "Enter full path:" hostdata
             cp "$hostdata" /home/pgalligan/Project/host_data.xlsx
+            cd ..
+            ./xlsx-config-global.sh
+            cd menu
             ls -l /home/pgalligan/Project/host_data.xlsx
-            read -p "Press any key";;
+            read -p "Press Enter key";;
         2)
             echo
             # need to work out how to use env variable as host in yml file
             cd /home/pgalligan/Project
             ansible-playbook -i xlsx_inventory.py hub.yml
-            read -p "Press any key";;
+            read -p "Press Enter key";;
         3)
             echo
             ;;
