@@ -3,6 +3,11 @@ used as input for the various variables that will be configured via API. Review 
 
 Currently this is in prototype phase and supports on the hub (HQ).
 
+These scripts rely on Python 3 and Ansible, as well as ansible_xlsx_inventory module from KeyboardInterrupt on github. Install the latest Python 3 and the Ansible FortiOS modules. Instructions for installing Ansible FortiOS modules can be 
+found here: https://galaxy.ansible.com/fortinet/fortios
+
+ansible_xlsx_inventory can be found here: https://github.com/KeyboardInterrupt/ansible_xlsx_inventory
+
 When the hub boots, it will get an IP address via DHCP. Ensure the IP address allocated is the same one in the spreadsheet.
 
 1. SSH to the hub and paste the contents of "base-config-HQ.txt". This will generate an API key which must be copied into the HQ.yml file as well as 
