@@ -10,8 +10,8 @@
       vdom:  "{{ vdom }}"
       access_token: "{{ fortios_access_token }}"
       router_static:
-        seq_num: "1"
+        seq_num: "{{ route_id }}"
         status: "enable"
-        gateway: "10.99.0.1"
-        dst: "0.0.0.0/0"
-        device: "port1"
+        gateway: "{{ route_gateway }}"
+        dst: "{{ route_destination }}"
+        device: "{{ route_device }}"
