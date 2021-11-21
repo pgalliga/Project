@@ -8,10 +8,9 @@ found here: https://galaxy.ansible.com/fortinet/fortios
 
 ansible_xlsx_inventory can be found here: https://github.com/KeyboardInterrupt/ansible_xlsx_inventory
 
-When the hub boots, it will get an IP address via DHCP. Ensure the IP address allocated is the same one in the spreadsheet.
+When the hub boots, it will get an IP address via DHCP on port1. Ensure the IP address allocated is the same one in the spreadsheet.
 
-1. SSH to the hub and paste the contents of "base-config-HQ.txt". This will generate an API key which must be copied into the HQ.yml file as well as 
-   the "fortios.access.token" column in the spreadsheet.
+1. SSH to the hub and paste the contents of "base-config-HQ.txt". This will generate an API key which must be copied into the "fortios.access.token" column in the spreadsheet.
 2. Run menu.sh from the /menu folder
 3. Option 1 to enter the location of your spreadsheet. Your spreasheet will be copied to the project folder as host_data.xlsx. The host_data.xlsx file supplied with this repository should be used as the template for your spreadsheet data
 4. Option 2 to configure the hub FortiGate
