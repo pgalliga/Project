@@ -1,5 +1,5 @@
 ---
-- hosts: HQ
+- hosts: "{{ host }}"
   gather_facts: false
 
 - import_playbook: global.yml

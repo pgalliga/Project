@@ -1,8 +1,10 @@
+# Configure management interface IP address
 config system interface
  edit port1
   set mode static
   set ip 10.99.0.123/24
  end
+# Configure administrator profile for API user
 conf system accprofile
  edit API-Admin
   set secfabgrp read-write
@@ -17,6 +19,7 @@ conf system accprofile
   set wanoptgrp read-write
   set wifi read-write
  end
+# Configure API user and generate API key
 config system api-user
  edit ansible
   set accprofile API-Admin

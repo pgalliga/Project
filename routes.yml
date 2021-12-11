@@ -1,4 +1,4 @@
-- hosts: HQ
+- hosts: "{{ host }}"
   connection: httpapi
   collections:
   - fortinet.fortios

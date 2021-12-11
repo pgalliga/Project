@@ -5,8 +5,7 @@ until [ 1 != 1 ]; do    #Show the menu and ask for selection
     echo
     echo "1. Enter Spreadsheet File Location"
     echo "2. Enter Host to Configure"
-    echo "3. Blah"
-    echo "4. Exit Menu"
+    echo "3. Exit Menu"
     read -p "Select an option:" menuchoice
     case $menuchoice in
         1)
@@ -22,12 +21,12 @@ until [ 1 != 1 ]; do    #Show the menu and ask for selection
             echo
             # need to work out how to use env variable as host in yml file
             cd /home/pgalligan/Project
-            ansible-playbook -i xlsx_inventory.py hub.yml
+            read -p "Enter host to configure: " host
+            echo "You entered: " $host
+            read -p "Press Enter to continue"
+            ansible-playbook -i xlsx_inventory.py -e host="$host" hub.yml
             read -p "Press Enter key";;
         3)
-            echo
-            ;;
-        4)
             echo -e "Goodbye"
             exit;;
     esac
